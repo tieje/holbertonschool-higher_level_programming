@@ -1,0 +1,4 @@
+# ignore executable files I don't need them
+**10-linked_lists.c
+**main.c
+**cycle
