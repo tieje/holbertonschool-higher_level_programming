@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 def islower(c):
-    if ord(x) > 96 and ord(x) < 122:
-        return True
-    return False
+    for i in range(len(c)):
+        if ord(c[i]) > 64 and ord(c[i]) < 91:
+            return False
+    return True
+
 
 """
 a = "seomthing"
