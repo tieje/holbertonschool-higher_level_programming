@@ -4,13 +4,12 @@ number = random.randint(-10, 10)
 
 
 def signCheck(n):
-    s_num = str(n)
     if (n > 0):
-        print(s_num + " is positive")
+        print("{:d} is positive".format(n))
     elif (n < 0):
-        print(s_num + " is negative")
+        print("{:d} is negative".format(n))
     else:
-        print(s_num + "is zero")
+        print("{:d} is zero".format(n))
     return
 
 
