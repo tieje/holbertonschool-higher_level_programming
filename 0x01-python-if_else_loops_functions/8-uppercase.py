@@ -5,11 +5,11 @@ def uppercase(str):
             print("{}".format(chr(ord(i) - 32)), end="")
         else:
             print("{}".format(i), end="")
+    print("")
     return
 
 
-"""
+
 uppercase("a string")
 uppercase("ThisstING")
 uppercase("98 Battery Street")
-"""
