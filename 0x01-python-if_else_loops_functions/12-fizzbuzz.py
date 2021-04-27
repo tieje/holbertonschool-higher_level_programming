@@ -1,17 +1,15 @@
 #!/usr/bin/python3
 def fizzbuzz():
-    printThis = "a"
     for i in range(1, 101):
         if i % 15 == 0:
-            printThis = "FizzBuzz"
+            print("FizzBuzz", end=" ")
         elif i % 3 == 0:
-            printThis = "Fizz"
+            print("Fizz", end=" ")
         elif i % 5 == 0:
-            printThis = "Buzz"
+            print("Buzz", end=" ")
         else:
-            printThis = str(i)
-        print(printThis, end=" ")
+            print("{:d}".format(i), end=" ")
     return
 
 
-#fizzbuzz()
+fizzbuzz()
