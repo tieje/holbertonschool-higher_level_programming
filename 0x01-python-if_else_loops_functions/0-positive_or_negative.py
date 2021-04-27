@@ -6,11 +6,11 @@ number = random.randint(-10, 10)
 def signCheck(n):
     s_num = str(n)
     if (n > 0):
-        print(s_num + " is positive\n")
+        print(s_num + " is positive")
     elif (n < 0):
-        print(s_num + " is negative\n")
+        print(s_num + " is negative")
     else:
-        print(s_num + "is zero\n")
+        print(s_num + "is zero")
     return
 
 
