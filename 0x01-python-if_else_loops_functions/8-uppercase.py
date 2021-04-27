@@ -11,7 +11,8 @@ def uppercase(str):
     return
 
 
-
+"""
 uppercase("a string")
 uppercase("ThisstING")
 uppercase("98 Battery Street")
+"""
