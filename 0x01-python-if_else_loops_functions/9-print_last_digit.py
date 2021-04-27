@@ -5,5 +5,7 @@ def print_last_digit(number):
     return
 
 
+"""
 print_last_digit(-1024)
 print_last_digit(98)
+"""
