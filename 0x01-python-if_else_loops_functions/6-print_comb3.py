@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-def twoDigitCombinations():
-    print("01, 02, 03, 04, 05, 06, 07, 08, 09, 12, 13, 14, 15, 16, 17, 18, 19, 23, 24, 25, 26, 27, 28, 29, 34, 35, 36, 37, 38, 39, 45, 46, 47, 48, 49, 56, 57, 58, 59, 67, 68, 69, 78, 79, 89")
-    return
-
-
-twoDigitCombinations()
+for i in range(0, 10):
+    for j in range(0, 10):
+        if i == 8 and j == 9:
+            print("89")
+        elif i < j:
+            print("{:d}{:d}, ".format(i, j), end="")
