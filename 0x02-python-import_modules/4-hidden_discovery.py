@@ -1,3 +1,7 @@
 #!/usr/bin/python3
-from sys import argv
+import hidden_4
 if __name__ == "__main__":
+    args = dir(hidden_4)
+    for i in range(len(args)):
+        if "__" != i[:2]:
+            print(i)
