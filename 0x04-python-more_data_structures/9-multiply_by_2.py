@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 def multiply_by_2(a_dictionary):
-    for k, v in a_dictionary.items():
-        a_dictionary[k] = v * 2
-    return a_dictionary
+    def mult2(x): return (x[0], x[1] * 2)
+    new_dict = dict(map(mult2, a_dictionary.items()))
+    return new_dict
