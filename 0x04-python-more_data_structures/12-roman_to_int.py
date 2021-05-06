@@ -6,7 +6,7 @@ def roman_to_int(roman_string):
                       'CM': 900, 'IV': 4, 'XL': 40, 'CD': 400}
     alt_numbers_list = []
     normal_numbers = []
-    if type(roman_string) != str:
+    if type(roman_string) != str and type(roman_string) != None:
         return 0
     pure_roman_string = roman_string
     def alt_form_check(x): return x[0] in roman_string
