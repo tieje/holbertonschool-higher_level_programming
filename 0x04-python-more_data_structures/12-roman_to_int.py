@@ -9,14 +9,14 @@ def roman_to_int(roman_string):
     normal_numbers = []
     if type(roman_string) != str:
         return 0
-
+    pure_roman_string = roman_string
     def alt_form_check(x): return x[0] in roman_string
     alt_numbers = dict(filter(alt_form_check, roman_dict_alt.items()))
     for i in alt_numbers.items():
         if i[0] in roman_string:
             alt_numbers_list.append(i[1])
-            roman_string.replace(i[0], '')
-    for i in roman_string:
+            pure_roman_string = pure_roman_string.replace(i[0], '')
+    for i in pure_roman_string:
         normal_numbers.append(roman_dict.get(i))
     total = sum(normal_numbers) + sum(alt_numbers_list)
     return total
