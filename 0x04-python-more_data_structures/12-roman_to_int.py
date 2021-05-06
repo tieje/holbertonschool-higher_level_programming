@@ -4,7 +4,6 @@ def roman_to_int(roman_string):
                   'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     roman_dict_alt = {'IX': 9, 'XC': 90,
                       'CM': 900, 'IV': 4, 'XL': 40, 'CD': 400}
-    total = 0
     alt_numbers_list = []
     normal_numbers = []
     if type(roman_string) != str:
