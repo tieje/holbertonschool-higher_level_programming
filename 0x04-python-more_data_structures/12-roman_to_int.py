@@ -6,6 +6,7 @@ def roman_to_int(roman_string):
                       'CM': 900, 'IV': 4, 'XL': 40, 'CD': 400}
     alt_numbers_list = []
     normal_numbers = []
+    total = 0
     if type(roman_string) != str and type(roman_string) != None:
         return 0
     pure_roman_string = roman_string
