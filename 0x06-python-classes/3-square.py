@@ -3,6 +3,7 @@
 No module-level stuff here.
 """
 
+
 class Square:
     """
     This class is all about squares.
@@ -14,6 +15,7 @@ class Square:
         ValueError: If the size isn't great than 0
         TypeError: If size is not an integer type
     """
+
     def __init__(self, size=0):
         if type(size) == int:
             if size >= 0:
@@ -22,6 +24,7 @@ class Square:
                 raise ValueError("size must be >= 0")
         else:
             raise TypeError("size must be an integer")
+
     def area(self):
         """
         Returns:
