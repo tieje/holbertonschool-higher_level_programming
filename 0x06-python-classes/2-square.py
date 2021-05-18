@@ -2,6 +2,8 @@
 """
 No module-level stuff here.
 """
+
+
 class Square:
     """
     This class is all about squares.
@@ -20,7 +22,7 @@ class Square:
         Args:
             size (int): A positive integer for the size of the square
         """
-        if type(size) != int:
+        if type(size) is not int:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
