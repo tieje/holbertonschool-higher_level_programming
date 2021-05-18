@@ -15,10 +15,13 @@ class Square:
     """
 
     def __init__(self, size=0):
-        if type(size) == int:
-            if size >= 0:
-                self.__size = size
-            else:
-                raise ValueError("size must be >= 0")
-        else:
+        """
+        Initialize square.
+        Args:
+            size (int): A positive integer for the size of the square
+        """
+        if type(size) != int:
             raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = size
