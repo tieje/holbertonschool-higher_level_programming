@@ -1,0 +1,39 @@
+Import functions from file
+
+    >>> addthis = __import__('0-add_integer').add_integer
+
+Testing if positive numbers work
+
+    >>> addthis(2, 5)
+    7
+
+Test negative numbers
+
+    >>> addthis(-2, -5)
+    -7
+
+Test float
+
+    >>> addthis(2.2, 5.5)
+    7
+
+Test non-integer string for variable space "a"
+
+    >>> addthis("hello", 6)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Test non-integer string for variable space "b"
+
+    >>> addthis(6, "world")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+Test non-integer string for both variable spaces "a" and "b"
+
+    >>> addthis("hello", "world")
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
