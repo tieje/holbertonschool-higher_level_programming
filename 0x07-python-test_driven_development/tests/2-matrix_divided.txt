@@ -34,3 +34,16 @@ result rounded to 2 significant figures
 
     >>> matrix_divided([[1], [2]], 3)
     [[0.33], [0.67]]
+
+testing infinity division
+
+    >>> matrix_divided([[1], [1]], float('inf'))
+    [[0], [0]]
+
+test missing 2 arguments
+
+    >>> matrix_divided(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
