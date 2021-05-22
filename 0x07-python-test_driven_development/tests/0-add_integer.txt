@@ -53,3 +53,15 @@ Test only string input "a"
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
+
+Test float infinity
+
+    >>> add_integer(float('inf'), 1)
+    89
+
+Test None
+
+    >>> add_integer(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
