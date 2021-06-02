@@ -1,0 +1,42 @@
+In Python, Everything is Object
+https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.kentonline.co.uk%2F_media%2Fimg%2FDF5NVPCMFU2V00YMQ7CU.jpg&f=1&nofb=1
+Python is an object-oriented language, where every assignment can be much bigger than it seems.
+For example, a simple string assignment to a variable:
+
+x = "hello"
+
+This string assignment is actually an object that can hold many pieces of contextual data such as the length of the string.
+
+All objects have an ID.
+
+But how does Python find these objects?
+The id() function might help.
+The id() function returns the unique ID from every object. Common objects, like integers from -5 to 256 have constant IDs that don't change. Common objects will have constant IDs to speed up python code.
+
+id(0)
+#10105056
+
+All objects have a Type.
+
+The type() function returns the type from the object.
+The type of the object has attributes that cannot be changed.
+For example, the string, "2", cannot be be mathematically added to the integer, 2, because they have different types.
+
+Some object types are mutable.
+
+Mutable objects have values that can be mutated, or changed.
+There are only three mutable types in python: set, list, and dict.
+
+Likewise, most other object types are immutable.
+
+Immutable objects have values that can be changed.
+Perhaps an immutable object can be copied, but they cannot be changed.
+All other types, such as tuples, strings, float, int, and bool are immutable objects.
+
+Just as an immutable object must be copied in order to make a new value, when an immutable object is passed into a function, instead of the original object being passed, only a copy is passed instead. For this reason, the following code does not result in changes:
+
+https://gist.github.com/tieje/77b0d369494d9ca23038855d53264534
+
+The result would be 12 instead of 13.
+
+If we used a similar example, but replaced the assignment with a mutable list instead of an immutable type, then the printed list would reflect changes made by the function.
