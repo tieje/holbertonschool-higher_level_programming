@@ -4,3 +4,4 @@ def read_file(filename=""):
     """This method reads a file."""
     with open(filename, 'r') as file:
         print(file.read())
+        file.close()
