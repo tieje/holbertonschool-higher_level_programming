@@ -1,36 +1,36 @@
 import test
 
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-    >>> bg = BaseGeometry
+    >>> bg = BaseGeometry()
 
 area function test
 
-    >>> bg.area(1)
+    >>> bg.area()
     Traceback (most recent call last):
         ...
     Exception: area() is not implemented
 
 integer_validator() tests. First one tests for normal operation.
 
-    >>> bg.integer_validator(1, "my_int", 12)
+    >>> bg.integer_validator("my_int", 12)
 
 string input
 
-    >>> bg.integer_validator(1, "name", "john")
+    >>> bg.integer_validator("name", "john")
     Traceback (most recent call last):
         ...
     TypeError: name must be an integer
 
 0 integer input
 
-    >>> bg.integer_validator(1, "name", 0)
+    >>> bg.integer_validator("name", 0)
     Traceback (most recent call last):
         ...
     ValueError: name must be greater than 0
 
 negative integer input
 
-    >>> bg.integer_validator(1, "name", -1)
+    >>> bg.integer_validator("name", -1)
     Traceback (most recent call last):
         ...
     ValueError: name must be greater than 0
