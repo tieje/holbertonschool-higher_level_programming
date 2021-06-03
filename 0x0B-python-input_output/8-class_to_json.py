@@ -2,6 +2,8 @@
 """
 Return dictionary description with data structure
 """
+
+
 def class_to_json(obj):
     """
     Return dictionary description with data structure
