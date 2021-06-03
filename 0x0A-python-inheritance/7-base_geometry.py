@@ -6,11 +6,11 @@ class BaseGeometry:
     """Base Geometry"""
 
     def area(self):
-        """does nothing so far"""
+        """Does nothing so far"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """integer validator"""
+        """Integer validator"""
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
