@@ -26,10 +26,11 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__width = width
         self.__height = height
-    
+
     def area(self):
         """Overwrites old area method"""
         return self.__width * self.__height
-    
+
     def __str__(self):
+        """Returns string"""
         return "[{}] {}/{}".format(__class__.__name__, self.__width, self.__height)
