@@ -19,7 +19,9 @@ class Student:
         Returns dictionary representation of self
         """
         print(self.__dir__)
-        def check_string(x): return type(x) is str
+        def check_string(x):
+            """small function"""
+            return type(x) is str
         if type(attrs) is list and all(list(map(check_string, attrs))):
             return {i: j for i, j in self.__dict__.items() if i in attrs}
         return self.__dict__
