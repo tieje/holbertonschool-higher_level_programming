@@ -20,6 +20,6 @@ class Student:
         Returns dictionary representation of self
         """
         def check_string(x): return type(x) is str
-        if all(list(map(check_string, attrs))):
+        if type(attrs) is list and all(list(map(check_string, attrs))):
             return {i: j for i, j in self.__dict__.items() if i in attrs}
         return self.__dict__
