@@ -25,6 +25,9 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """setter for width"""
+        var_name = 'width'
+        Rectangle.check_int(value, var_name)
+        Rectangle.check_width_height(value, var_name)
         self.__width = value
 
     @property
@@ -35,6 +38,9 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """setter for height"""
+        var_name = 'height'
+        Rectangle.check_int(value, var_name)
+        Rectangle.check_width_height(value, var_name)
         self.__height = value
 
     @property
@@ -45,6 +51,9 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """setter for x"""
+        var_name = 'height'
+        Rectangle.check_int(value, var_name)
+        Rectangle.check_x_y(value, var_name)
         self.__x = value
 
     @property
@@ -55,4 +64,31 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """setter for y"""
+        var_name = 'height'
+        Rectangle.check_int(value, var_name)
+        Rectangle.check_x_y(value, var_name)
         self.__y = value
+
+    @staticmethod
+    def check_int(x, name):
+        """if input is not an integer raise error"""
+        if type(x) is not int:
+            raise TypeError('{} must be an integer'.format(name))
+
+    @staticmethod
+    def check_width_height(x, name):
+        """if width or height is not greater than 0 raise error"""
+        if x <= 0:
+            raise ValueError('{} must be > 0'.format(name))
+
+    @staticmethod
+    def check_x_y(x, name):
+        """if x or y is not is less than 0 raise error"""
+        if x < 0:
+            raise ValueError('{} must be >= 0'.format(name))
+
+    def area(self):
+        """returns the area of the rectangle"""
+        return self.width * self.height
+    
+    
