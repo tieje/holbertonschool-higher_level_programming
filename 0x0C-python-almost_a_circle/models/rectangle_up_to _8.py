@@ -3,6 +3,8 @@
 Rectangle code
 """
 from models.base import Base
+
+
 class Rectangle(Base):
     """
     Rectangle code
@@ -68,21 +70,21 @@ class Rectangle(Base):
         self.__y = value
 
     @staticmethod
-    def check_int(attr, name):
+    def check_int(x, name):
         """if input is not an integer raise error"""
-        if type(attr) is not int:
+        if type(x) is not int:
             raise TypeError('{} must be an integer'.format(name))
 
     @staticmethod
-    def check_width_height(attr, name):
+    def check_width_height(x, name):
         """if width or height is not greater than 0 raise error"""
-        if attr <= 0:
+        if x <= 0:
             raise ValueError('{} must be > 0'.format(name))
 
     @staticmethod
-    def check_x_y(attr, name):
+    def check_x_y(x, name):
         """if x or y is not is less than 0 raise error"""
-        if attr < 0:
+        if x < 0:
             raise ValueError('{} must be >= 0'.format(name))
 
     def area(self):
@@ -100,21 +102,13 @@ class Rectangle(Base):
         """returns shape and width/height"""
         return "[{}] ({}) {}/{} - {}/{}".format(
             __class__.__name__,
-            self.id, self.__x, self.__y, self.__width, self.__height)
-
-    def update(self, *args, **kwargs):
+            self.id, self.x, self.y, self.width, self.height)
+    def update(self, *args):
         """assigns an argument to each attribute"""
-        if args and args != () and args != None:
-            ordered_list = ['id', 'width', 'height', 'x', 'y']
-            for i in range(len(args)):
-                # id is does not have _Rectangle__ prefix
-                if i == 0:
-                    self.__dict__[ordered_list[i]] = args[i]
-                else:
-                    self.__dict__['_Rectangle__' + ordered_list[i]] = args[i]
-        elif kwargs != None:
-            for key, value in kwargs.items():
-                if key == 'id':
-                    self.__dict__[key] = value
-                else:
-                    self.__dict__['_Rectangle__' + key] = value
+        ordered_list = ['id', 'width', 'height', 'x', 'y']
+        for i in range(len(args)):
+            # id is does not have _Rectangle__ prefix
+            if i == 0:
+                self.__dict__[ordered_list[i]] = args[i]
+            else:
+                self.__dict__['_Rectangle__' + ordered_list[i]] = args[i]
