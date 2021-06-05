@@ -103,3 +103,12 @@ class Rectangle(Base):
         return "[{}] ({}) {}/{} - {}/{}".format(
             __class__.__name__,
             self.id, self.x, self.y, self.width, self.height)
+    def update(self, *args):
+        """assigns an argument to each attribute"""
+        ordered_list = ['id', 'width', 'height', 'x', 'y']
+        for i in range(len(args)):
+            # id is does not have _Rectangle__ prefix
+            if i == 0:
+                self.__dict__[ordered_list[i]] = args[i]
+            else:
+                self.__dict__['_Rectangle__' + ordered_list[i]] = args[i]
