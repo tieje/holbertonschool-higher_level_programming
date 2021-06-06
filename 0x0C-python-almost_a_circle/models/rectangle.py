@@ -3,6 +3,8 @@
 Rectangle code
 """
 from models.base import Base
+
+
 class Rectangle(Base):
     """
     Rectangle code
@@ -117,4 +119,8 @@ class Rectangle(Base):
                 if key == 'id':
                     self.__dict__[key] = value
                 else:
-                    self.__dict__['_Rectangle__' + key] = value
+                    self.__dict__[key] = value
+
+    def to_dictionary(self):
+        """returns dictionary of Rectangle"""
+        return self.__dict__
