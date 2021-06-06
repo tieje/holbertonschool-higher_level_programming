@@ -46,4 +46,5 @@ class Base:
                     result.append(json.loads(json_string))
                 file.write(str(result))
     @classmethod
-    
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
