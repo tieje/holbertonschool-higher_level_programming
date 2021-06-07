@@ -77,11 +77,14 @@ class Base:
             field_names = []
             for i in list_objs:
                 dictionaries.append(i.to_dictionary())
-            for k, v in dictionaries[0].items():
-                field_names.append(k)
-            writer = csv.DictWriter(file, fieldnames=field_names)
-            writer.writeheader()
-            writer.writerows(dictionaries)
+            if list_objs == [] or list_objs == None:
+                return
+            else:
+                for k, v in dictionaries[0].items():
+                    field_names.append(k)
+                writer = csv.DictWriter(file, fieldnames=field_names)
+                writer.writeheader()
+                writer.writerows(dictionaries)
 
     @classmethod
     def load_from_file_csv(cls):
