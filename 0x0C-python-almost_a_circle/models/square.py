@@ -5,6 +5,7 @@ A Square Boi
 from models.rectangle import Rectangle
 import json
 
+
 class Square(Rectangle):
     """
     Classy Square
@@ -61,25 +62,33 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
+
+    def update(self, *args, **kwargs):
+        """assigns an argument to each attribute"""
         if args and args != () and args != None:
-            ordered_list = ['id', 'size', 'x', 'y']
             for i in range(len(args)):
                 # id is does not have _Rectangle__ prefix
                 if i == 0:
-                    self.__dict__[ordered_list[i]] = args[i]
-                else:
-                    self.__dict__['_Square__' + ordered_list[i]] = args[i]
+                    self.id = args[i]
+                elif i == 1:
+                    self.__size = args[i]
+                elif i == 2:
+                    self.__x = args[i]
+                elif i == 3:
+                    self.__y = args[i]
         elif kwargs != None:
             for key, value in kwargs.items():
                 if key == 'id':
-                    self.__dict__[key] = value
-                else:
-                    self.__dict__[key] = value
+                    self.id = value
+                elif key == 'size':
+                    self.__size = value
+                elif key == 'x':
+                    self.__x = value
+                elif key == 'y':
+                    self.__y = value
+
     def to_dictionary(self):
-        """returns dictionary of Rectangle"""
-        """
-        json_string = json.dumps(self.__dict__, default=lambda o: o.__dict__)
-        replace_rectangle = json_string.replace('_Rectangle__', '').replace('_Square__', '')
-        return json.loads(replace_rectangle)
-        """
-        return self.__dict__
+        """returns dictionary of Square"""
+        dictionary = {'id': self.id, 'size': self.__size,
+                      'x': self.__x, 'y': self.__y}
+        return dictionary
