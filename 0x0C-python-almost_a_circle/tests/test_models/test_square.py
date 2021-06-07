@@ -16,9 +16,9 @@ class TestSquareMethods(unittest.TestCase):
         Problem 12, Square Update #0. Tests *args and **kwargs
         """
         # initialize
-        s1 = Square(5)
+        s1 = Square(5, id=1)
         self.assertEqual(s1.__str__(), "[Square] (1) 0/0 - 5")
-        # no arguments
+        # no arguments except id
         s1.update()
         self.assertEqual(s1.__str__(), "[Square] (1) 0/0 - 5")
         # one argument

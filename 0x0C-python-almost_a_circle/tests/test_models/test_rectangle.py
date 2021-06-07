@@ -5,7 +5,6 @@ Tests for Rectangle class
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base
-from unittest.mock import patch, call
 
 
 class TestRectangleMethods(unittest.TestCase):
@@ -66,6 +65,16 @@ class TestRectangleMethods(unittest.TestCase):
             contents = file.read()
             self.assertEqual(eval(contents), equal)
 
+    def test_load_empty_JSON(self):
+        """Test empty list to and from JSON."""
+        Rectangle.save_to_file([])
+        list_rectangles_output = Rectangle.load_from_file()
+        self.assertEqual(list_rectangles_output, [])
+
+    def test_non_existent_JSON_file(self):
+        """Test non-existent JSON file"""
+        self.assertEqual(Base.load_from_file(), [])
+
     def test_SaveToAndLoadFromCSV(self):
         """
         Problem 20, save to and read from CSV for
@@ -82,11 +91,15 @@ class TestRectangleMethods(unittest.TestCase):
         equal_2 = "[Rectangle] (2) 0/0 - 2/4"
         self.assertEqual(list_rectangles_output[0].__str__(), equal_1)
         self.assertEqual(list_rectangles_output[1].__str__(), equal_2)
-        # Test empty list.
+
+    def test_load_empty_CSV(self):
+        """Test empty list to and from CSV."""
         Rectangle.save_to_file_csv([])
         list_rectangles_output = Rectangle.load_from_file_csv()
         self.assertEqual(list_rectangles_output, [])
-        # Test non-existent file
+
+    def test_non_existent_CSV_file(self):
+        """Test non-existent file"""
         self.assertEqual(Base.load_from_file_csv(), [])
 
 
