@@ -11,6 +11,26 @@ class TestSquareMethods(unittest.TestCase):
     Square class tests
     """
 
+    def test_string_input(self):
+        '''String Input'''
+        with self.assertRaises(TypeError):
+            Square("word", 'up')
+
+    def test_negative_size(self):
+        '''Less than zero width, height input'''
+        with self.assertRaises(ValueError):
+            Square(-1)
+
+    def test_zero_size(self):
+        '''Zero width, height input'''
+        with self.assertRaises(ValueError):
+            Square(0)
+
+    def test_negative_x_y(self):
+        '''negative x and y'''
+        with self.assertRaises(ValueError):
+            Square(size=1, x=-1, y=-1)
+
     def test_Update_Args(self):
         """
         Problem 12, Square Update #0. Tests *args and **kwargs
@@ -39,6 +59,15 @@ class TestSquareMethods(unittest.TestCase):
         # kwargs test all
         s1.update(size=7, id=89, y=1, x=12)
         self.assertEqual(s1.__str__(), "[Square] (89) 12/1 - 7")
+
+    def test_Display(self):
+        '''
+        Problem 5 and 7. Display in terms of #s
+        for square.
+        '''
+        s1 = Square(3, 2, 2)
+        compare = "\n\n  ###  ###  ###"
+        self.assertEqual(s1.display(), compare)
 
     def test_SaveToJson(self):
         """

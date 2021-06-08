@@ -10,7 +10,28 @@ from models.base import Base
 class TestRectangleMethods(unittest.TestCase):
     """
     Tests for Rectangle class Methods
+    Intentionally skipping question 2
     """
+
+    def test_string_input(self):
+        '''String Input'''
+        with self.assertRaises(TypeError):
+            Rectangle("word", 'up')
+
+    def test_negative_width_height(self):
+        '''Less than zero width, height input'''
+        with self.assertRaises(ValueError):
+            Rectangle(-1, -1)
+
+    def test_zero_width_height(self):
+        '''Zero width, height input'''
+        with self.assertRaises(ValueError):
+            Rectangle(0, 0)
+
+    def test_negative_x_y(self):
+        '''negative x and y'''
+        with self.assertRaises(ValueError):
+            Rectangle(width=1, height=1, x=-1, y=-1)
 
     def test_Area(self):
         """
@@ -22,6 +43,15 @@ class TestRectangleMethods(unittest.TestCase):
         # Maximum possible inputs
         r_max = Rectangle(8, 7, 1, 1, 12).area()
         self.assertEqual(r_max, 56)
+
+    def test_Display(self):
+        '''
+        Problem 5 and 7. Display in terms of #s
+        for rectangle
+        '''
+        r1 = Rectangle(2, 3, 2, 2)
+        compare = "\n\n  ##  ##  ##"
+        self.assertEqual(r1.display(), compare)
 
     def test_Update_Args(self):
         """
@@ -51,6 +81,14 @@ class TestRectangleMethods(unittest.TestCase):
         # too many arguments
         r1.update(89, 2, 3, 4, 5, 6, 7, 8)
         self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")
+
+    def test_json_string(self):
+        '''Problem 15. to_json_string'''
+        r1 = Rectangle(10, 7, 2, 8, 1)
+        dictionary = r1.to_dictionary()
+        json_dictionary = Base.to_json_string([dictionary])
+        compare = eval('[{"x": 2, "y": 8, "id": 1, "height": 7, "width": 10}]')
+        self.assertEqual(eval(json_dictionary), compare)
 
     def test_SaveToJson(self):
         """

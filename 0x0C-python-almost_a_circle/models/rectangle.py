@@ -93,10 +93,15 @@ class Rectangle(Base):
 
     def display(self):
         """prints the rectangle in character #"""
+        test_display = []
         for i in range(self.y):
             print()
+            test_display.append('\n')
         for i in range(self.height):
-            print(' ' * self.x + '#' * self.width)
+            print_this = ' ' * self.x + '#' * self.width
+            print(print_this)
+            test_display.append(print_this)
+        return ''.join(test_display)
 
     def __str__(self):
         """returns shape and width/height"""

@@ -62,9 +62,6 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
-
-    def update(self, *args, **kwargs):
-        """assigns an argument to each attribute"""
         if args and args != () and args != None:
             for i in range(len(args)):
                 # id is does not have _Rectangle__ prefix
