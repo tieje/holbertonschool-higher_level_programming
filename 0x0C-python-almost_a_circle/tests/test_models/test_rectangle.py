@@ -33,14 +33,16 @@ class TestRectangleMethods(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(width=1, height=1, x=-1, y=-1)
 
-    def test_Area(self):
+    def test_Area_min(self):
         """
         Problem 4, Area First
         """
         # Minimum required inputs
         r1 = Rectangle(3, 2).area()
         self.assertEqual(r1, 6)
-        # Maximum possible inputs
+    
+    def test_Area_max(self):
+        """Maximum possible inputs"""
         r_max = Rectangle(8, 7, 1, 1, 12).area()
         self.assertEqual(r_max, 56)
 
@@ -81,6 +83,13 @@ class TestRectangleMethods(unittest.TestCase):
         # too many arguments
         r1.update(89, 2, 3, 4, 5, 6, 7, 8)
         self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")
+    
+    def test_Update_Kwargs(self):
+        """testing kwargs"""
+        r1 = Rectangle(10, 10, 10, 10, 1)
+        self.assertEqual(r1.__str__(), "[Rectangle] (1) 10/10 - 10/10")
+        r1.update(id=1, x=1, y=1, width=1, height=1)
+        self.assertEqual(r1.__str__(), "[Rectangle] (1) 1/1 - 1/1")
 
     def test_json_string(self):
         '''Problem 15. to_json_string'''
