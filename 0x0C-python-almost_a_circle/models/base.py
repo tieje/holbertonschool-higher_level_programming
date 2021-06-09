@@ -5,6 +5,7 @@ Base class for almost a circle
 import json
 import csv
 
+
 class Base:
     """
     Base class for almost a circle
@@ -21,7 +22,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """return json string repr of list_dictionaries"""
-        if list_dictionaries == None or list_dictionaries == {}:
+        if list_dictionaries is None or list_dictionaries == {}:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -30,7 +31,7 @@ class Base:
         """returns list from JSON string"""
         if type(json_string) == dict:
             return json_string
-        if json_string == None or json_string == '':
+        if json_string is None or json_string == '':
             return []
         return json.loads(json_string)
 
@@ -38,7 +39,7 @@ class Base:
     def save_to_file(cls, list_objs):
         """saves json class data to file"""
         with open(cls.__name__ + '.json', mode='w') as file:
-            if list_objs == None or list_objs == []:
+            if list_objs is None or list_objs == []:
                 file.write('[]')
             else:
                 dictionaries = []
@@ -68,7 +69,7 @@ class Base:
                 return instances
         except FileNotFoundError:
             return []
-    
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """save data to csv file"""
@@ -77,7 +78,7 @@ class Base:
             field_names = []
             for i in list_objs:
                 dictionaries.append(i.to_dictionary())
-            if list_objs == [] or list_objs == None:
+            if list_objs == [] or list_objs is None:
                 return
             else:
                 for k, v in dictionaries[0].items():
