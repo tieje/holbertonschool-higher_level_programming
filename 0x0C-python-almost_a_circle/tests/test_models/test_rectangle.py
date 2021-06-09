@@ -13,6 +13,11 @@ class TestRectangleMethods(unittest.TestCase):
     Intentionally skipping question 2
     """
 
+    def test_two_input(self):
+        '''Tests I missed: test 1,2 input'''
+        r1 = Rectangle(1, 2)
+        self.assertEqual(r1.__str__(), "[Rectangle] (12) 0/0 - 1/2")
+
     def test_string_input(self):
         '''String Input'''
         with self.assertRaises(TypeError):
@@ -40,7 +45,7 @@ class TestRectangleMethods(unittest.TestCase):
         # Minimum required inputs
         r1 = Rectangle(3, 2).area()
         self.assertEqual(r1, 6)
-    
+
     def test_Area_max(self):
         """Maximum possible inputs"""
         r_max = Rectangle(8, 7, 1, 1, 12).area()
@@ -68,7 +73,9 @@ class TestRectangleMethods(unittest.TestCase):
         # one argument
         r1.update(89)
         self.assertEqual(r1.__str__(), "[Rectangle] (89) 10/10 - 10/10")
+
     def test_Update_Two_Args(self):
+        '''testing multiples args'''
         # two arguments
         r1 = Rectangle(10, 10, 10, 10, 1)
         r1.update(89, 2)
@@ -85,7 +92,7 @@ class TestRectangleMethods(unittest.TestCase):
         # too many arguments
         r1.update(89, 2, 3, 4, 5, 6, 7, 8)
         self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")
-    
+
     def test_Update_Kwargs(self):
         """testing kwargs"""
         r1 = Rectangle(10, 10, 10, 10, 1)
