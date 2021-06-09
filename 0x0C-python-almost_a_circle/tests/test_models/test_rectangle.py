@@ -68,7 +68,9 @@ class TestRectangleMethods(unittest.TestCase):
         # one argument
         r1.update(89)
         self.assertEqual(r1.__str__(), "[Rectangle] (89) 10/10 - 10/10")
+    def test_Update_Two_Args(self):
         # two arguments
+        r1 = Rectangle(10, 10, 10, 10, 1)
         r1.update(89, 2)
         self.assertEqual(r1.__str__(), "[Rectangle] (89) 10/10 - 2/10")
         # three arguments
