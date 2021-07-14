@@ -2,4 +2,8 @@
 SELECT
     id,
     name
-FROM cities
+FROM
+    cities c,
+    states s
+WHERE
+    s.state = "California";
