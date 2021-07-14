@@ -6,4 +6,4 @@ FROM
     cities c,
     states s
 WHERE
-    s.state = "California";
+    s.name = "California";
