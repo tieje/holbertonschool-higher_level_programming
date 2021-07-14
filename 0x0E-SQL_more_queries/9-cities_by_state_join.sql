@@ -5,6 +5,6 @@ SELECT
     states.name
 FROM
     cities,
-INNER JOIN states
+JOIN states
     ON cities.state_id = state.id
 ORDER BY cities.id ASC;
