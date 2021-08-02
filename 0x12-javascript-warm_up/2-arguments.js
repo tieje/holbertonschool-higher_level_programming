@@ -1,5 +1,4 @@
 #!/usr/bin/node
-import { argv } from 'process';
 
 const ArgsFound = (arg) => {
   if (arg.length === 2) {
@@ -11,4 +10,4 @@ const ArgsFound = (arg) => {
   }
 };
 
-ArgsFound(argv);
+ArgsFound(process.argv);
