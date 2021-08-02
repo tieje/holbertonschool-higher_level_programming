@@ -2,7 +2,13 @@
 import { argv } from 'process';
 
 const ArgsFound = (arg) => {
-  arg.length > 2 ? console.log('Argument found') : console.log('No argument');
+  if (arg.length === 3) {
+    console.log('Argument found');
+  } else if (arg.length > 3) {
+    console.log('Arguments found');
+  } else {
+    console.log('No argument');
+  }
 };
 
 ArgsFound(argv);
