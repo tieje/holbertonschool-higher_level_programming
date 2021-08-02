@@ -1,7 +1,4 @@
-#!/usr/local/bin/node
-
-import { argv } from 'process';
-
+#!/usr/bin/node
 const printXTimes = (arg) => {
   if (arg.length < 3) {
     console.log('Missing number of occurrences');
@@ -12,4 +9,4 @@ const printXTimes = (arg) => {
   }
 };
 
-printXTimes(argv);
+printXTimes(process.argv);
