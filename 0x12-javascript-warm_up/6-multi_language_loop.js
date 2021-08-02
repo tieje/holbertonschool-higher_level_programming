@@ -1,5 +1,4 @@
-#!/usr/local/bin/node
-
+#!/usr/bin/node
 const printThreeLines = () => {
   let arr = [
     'C is fun',
