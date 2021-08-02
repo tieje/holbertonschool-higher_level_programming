@@ -1,6 +1,4 @@
-#!/usr/local/bin/node
-
-import { argv } from 'process';
+#!/usr/bin/node
 
 const printIsArgs = (arr) => {
   let ln = arr.length;
@@ -14,4 +12,4 @@ const printIsArgs = (arr) => {
   console.log(first_arg + ' is ' + sec_arg);
 };
 
-printIsArgs(argv);
+printIsArgs(process.argv);
