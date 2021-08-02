@@ -2,8 +2,8 @@
 
 function getFactorio (a) {
   const n = Number(a);
-  if (n === NaN || n === 1) {
-    return (1);
+  if (isNaN(n) || n === 1) {
+    return 1;
   }
   return n * getFactorio(n - 1);
 }
