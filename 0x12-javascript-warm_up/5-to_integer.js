@@ -4,7 +4,7 @@ const convertToNumber = (arr) => {
   if (arr.length === 3) {
     p_number = Number(arr[2]);
   }
-  if (!p_number) {
+  if (isNaN(p_number)) {
     console.log('Not a number');
   } else {
     console.log('My number: ' + p_number);
