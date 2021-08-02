@@ -1,5 +1,3 @@
-#!/usr/local/bin/node
+#!/usr/bin/node
 
-import { argv } from 'process';
-
-argv.length > 2 ? console.log(argv[2]) : console.log('No argument');
+process.argv.length > 2 ? console.log(process.argv[2]) : console.log('No argument');
