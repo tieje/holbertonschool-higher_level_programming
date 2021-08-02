@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/node
 const myVar = () => {
   console.log('C is fun');
   console.log('Python is cool');
