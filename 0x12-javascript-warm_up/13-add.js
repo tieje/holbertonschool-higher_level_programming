@@ -1,4 +1,5 @@
 #!/usr/bin/node
-export const add = (a, b) => {
-  return (Number(a) + Number(b));
+exports.add = function (a, b) {
+  const c = parseInt(a) + parseInt(b);
+  return c;
 };
