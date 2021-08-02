@@ -1,10 +1,7 @@
-#!/usr/local/bin/node
-
-import { argv } from 'process';
-
+#!/usr/bin/node
 const convertToNumber = (arr) => {
   let p_number = false;
-  if (arr.length == 3) {
+  if (arr.length === 3) {
     p_number = Number(arr[2]);
   }
   if (!p_number) {
@@ -14,4 +11,4 @@ const convertToNumber = (arr) => {
   }
 };
 
-convertToNumber(argv);
+convertToNumber(process.argv);
