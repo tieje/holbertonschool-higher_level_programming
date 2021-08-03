@@ -6,6 +6,7 @@ class Square extends BaseSquare {
     super(size);
     this.size = size;
   }
+
   charPrint (c) {
     if (c === undefined) {
       c = 'X';
