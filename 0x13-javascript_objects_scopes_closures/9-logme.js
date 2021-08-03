@@ -1,4 +1,6 @@
 #!/usr/local/bin/node
+let argNum = 0;
 exports.logMe = function (item) {
-  console.count(item);
+  console.log(`${argNum}: ${item}`);
+  argNum += 1;
 };
