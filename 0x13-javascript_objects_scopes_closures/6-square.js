@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/node
 const BaseSquare = require('./5-square.js');
 
 class Square extends BaseSquare {
