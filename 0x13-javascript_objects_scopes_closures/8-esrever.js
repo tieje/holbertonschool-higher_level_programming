@@ -5,6 +5,6 @@ exports.esrever = function (list) {
   for (let i = ln; i >= 0; i--) {
     newList.push(list[i]);
   }
-  reversed.shift();
+  newList.shift();
   return newList;
 };
