@@ -2,9 +2,10 @@
   "search-online.search-engine": "Github",
   "python.pythonPath": "/usr/bin/python3",
   "python.formatting.provider": "autopep8",
-  "javascript.validate.enable": false,
-  "editor.formatOnType": true,
-  "editor.formatOnSave": true,
-  "semistandard.autoFixOnSave": true,
-  "editor.tabSize": 2
+  "javascript.validate.enable": false
 }
+
+//"editor.formatOnType": true,
+//"editor.formatOnSave": true,
+//"semistandard.autoFixOnSave": true,
+//"editor.tabSize": 2
