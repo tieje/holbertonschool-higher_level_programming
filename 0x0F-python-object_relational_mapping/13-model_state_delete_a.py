@@ -18,8 +18,6 @@ if __name__ == "__main__":
     connection = 'mysql+mysqldb://{}:{}@localhost:3306/{}'
     engine = create_engine(connection.format(user_name, password, db_name),
                            pool_pre_ping=True)
-    Session = sessionmaker(engine)
-    session = Session()
-    query = session.delete(State).filter(State.name.like('%a%'))
-    session.commit()
-    session.close()
+    conn = engine.connect()
+    stmt = State.delete().filter(State.name.like('%a%'))
+    conn.execute(stmt)
