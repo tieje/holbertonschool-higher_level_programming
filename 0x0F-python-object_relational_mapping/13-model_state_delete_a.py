@@ -20,10 +20,7 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Session = sessionmaker(engine)
     session = Session()
-    query = session.query(State)
-    results = session.execute(query).fetchall()
-    for key, value in results:
-        if 'a' in value:
-            session.delete(value)
+    query = session.query(State).filter(state.name.like('%a%'))
+    session.delete(query)
     session.commit()
     session.close()
