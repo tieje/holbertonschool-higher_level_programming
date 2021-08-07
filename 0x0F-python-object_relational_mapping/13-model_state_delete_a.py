@@ -20,7 +20,6 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Session = sessionmaker(engine)
     session = Session()
-    query = session.query(State).filter(State.name.like('%a%'))
-    session.delete(query)
+    query = session.query(State).filter(State.name.like('%a%')).delete()
     session.commit()
     session.close()
