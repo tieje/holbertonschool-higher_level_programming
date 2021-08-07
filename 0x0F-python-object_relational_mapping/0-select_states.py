@@ -1,6 +1,6 @@
 
 if __name__ == "__main__":
-    from MySQLdb import _mysql as my
+    import MySQLdb as my
     from sys import argv
 
     username = argv[1]

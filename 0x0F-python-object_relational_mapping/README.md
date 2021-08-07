@@ -11,8 +11,7 @@ This terminal will lock up so open another terminal and ssh from there.
 
 mysql -u root
 
-UPDATE mysql.user SET authentication_string=PASSWORD('password') WHERE User='root';
-FLUSH PRIVILEGES;
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'fullmetal';
 
 exit
 
@@ -58,8 +57,6 @@ mysql -u root -p
 
 You should be able to log in an out of the container now.
 This container is equipped with git so it's possible to pull and then run your scripts from there.
-
-
 
 To determine mysql status, use:
 service mysql status
