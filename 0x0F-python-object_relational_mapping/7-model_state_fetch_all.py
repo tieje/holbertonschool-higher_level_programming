@@ -21,6 +21,6 @@ if __name__ == "__main__":
     conn = engine.connect()
     query = select(State).order_by(State.id).all()
     with Session(engine) as session:
-        results = session.execute(query).scalars().all()
+        results = session.execute(query).all()
         for item in query:
             print("{}: {}".format(item.id, item.name))
