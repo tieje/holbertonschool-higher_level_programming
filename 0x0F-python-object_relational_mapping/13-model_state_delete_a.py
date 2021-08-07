@@ -4,7 +4,7 @@ list the first state object from database hbtn_0e_6_usa
 """
 import sys
 from model_state import Base, State
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, select
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
@@ -18,6 +18,9 @@ if __name__ == "__main__":
     connection = 'mysql+mysqldb://{}:{}@localhost:3306/{}'
     engine = create_engine(connection.format(user_name, password, db_name),
                            pool_pre_ping=True)
-    conn = engine.connect()
-    stmt = State.delete().filter(State.name.like('%a%'))
-    conn.execute(stmt)
+    Session = sessionmaker(engine)
+    session = Session()
+    query = select(State).filter(State.name.like('%a%'))
+    session.delete(query)
+    session.commit()
+    session.close()
