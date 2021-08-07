@@ -21,7 +21,7 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
     query = session.query(State).filter(State.name.like('%a%'))
-    results = session.execute(query).fetchall()
-    session.delete(results)
+    for item in query:
+        session.delete(item)
     session.commit()
     session.close()
