@@ -20,7 +20,7 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Session = sessionmaker(engine)
     session = Session()
-    data = States(name='Louisiana')
+    data = State(name='Louisiana')
     session.add(data)
     session.commit()
     print(data.id)
