@@ -22,5 +22,6 @@ if __name__ == "__main__":
     session = Session()
     query = session.query(State).order_by(State.id)
     results = session.execute(query)
-    for item in results:
-        print("{}: {}".format(item.id, item.name))
+    final = results.fetchall()
+    for key, value in final:
+        print("{}: {}".format(key, value))
