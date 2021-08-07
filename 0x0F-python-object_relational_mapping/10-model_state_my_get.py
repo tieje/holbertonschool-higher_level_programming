@@ -23,10 +23,11 @@ if __name__ == "__main__":
     session = Session()
     query = session.query(State)
     results = session.execute(query).fetchall()
-    print(results)
+    state_found = False
     if results is not None:
         for key, value in results:
             if state_name == value:
                 print("{}".format(key))
-    else:
+                state_found = True
+    if state_found:
         print('Not found')
