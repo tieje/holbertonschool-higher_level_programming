@@ -20,7 +20,7 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Session = sessionmaker(engine)
     session = Session()
-    query = session.query(State).where(State.id == 1)
+    query = session.query(State)
     results = session.execute(query)
     final = results.fetchone()
     for key, value in final:
