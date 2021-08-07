@@ -29,5 +29,5 @@ if __name__ == "__main__":
             if state_name == value:
                 print("{}".format(key))
                 state_found = True
-    if state_found:
+    if not state_found:
         print('Not found')
