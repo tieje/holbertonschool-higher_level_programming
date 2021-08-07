@@ -5,7 +5,7 @@ list all state objects from database hbtn_0e_6_usa
 import sys
 from model_state import Base, State
 from sqlalchemy import create_engine, select
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     import MySQLdb
@@ -18,9 +18,9 @@ if __name__ == "__main__":
     connection = 'mysql+mysqldb://{}:{}@localhost:3306/{}'
     engine = create_engine(connection.format(user_name, password, db_name),
                            pool_pre_ping=True)
-    conn = engine.connect()
+    Session = sessionmaker(engine)
     query = select(State).order_by(State.id).all()
-    with Session(engine) as session:
+    with Session() as session:
         results = session.execute(query).all()
-        for item in query:
+        for item in results:
             print("{}: {}".format(item.id, item.name))
