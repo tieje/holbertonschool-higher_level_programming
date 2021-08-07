@@ -12,9 +12,9 @@ if __name__ == "__main__":
     import sys
 
     # Connect to a MySQL database based on command line arguments
-    username = sys.argv[1]
+    user_name = sys.argv[1]
     password = sys.argv[2]
-    database = sys.argv[3]
+    db_name = sys.argv[3]
     state_name = sys.argv[4]
     connection = 'mysql+mysqldb://{}:{}@localhost:3306/{}'
     engine = create_engine(connection.format(user_name, password, db_name),
