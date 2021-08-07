@@ -4,7 +4,8 @@ list all state objects from database hbtn_0e_6_usa
 """
 import sys
 from model_state import Base, State
-from sqlalchemy import create_engine, select, session
+from sqlalchemy import create_engine, select
+from sqlalchemy.orm import Session
 
 if __name__ == "__main__":
     import MySQLdb
@@ -19,6 +20,7 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     conn = engine.connect()
     query = select(State).order_by(State.id).all()
-    result = session.execute(query).scalars().all()
-    for item in query:
-        print("{}: {}".format(item.id, item.name))
+    with Session(engine) as session:
+        results = session.execute(query).scalars().all()
+        for item in query:
+            print("{}: {}".format(item.id, item.name))
