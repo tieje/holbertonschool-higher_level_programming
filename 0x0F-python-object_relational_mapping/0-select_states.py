@@ -1,14 +1,11 @@
-
+#!/usr/bin/python3
+"""Lists all states from the database `hbtn_0e_0_usa`."""
 if __name__ == "__main__":
-    import MySQLdb as my
-    from sys import argv
+    import MySQLdb
+    import sys
 
-    username = argv[1]
-    password = argv[2]
-    db_name = argv[3]
-
-    db = my.connect(host="localhost", user=username,
-                    passwd=password, db=db_name)
+    username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
+    db = MySQLdb.connect(user=username, passwd=password, db=database)
     db.query("""SELECT * FROM states ORDER BY states.id ASC;""")
     rows = db.store_result()
     for row in rows.fetch_row(0):
