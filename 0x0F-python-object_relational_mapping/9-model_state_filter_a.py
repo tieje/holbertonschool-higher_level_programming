@@ -20,6 +20,8 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Session = sessionmaker(engine)
     session = Session()
-    query = session.query(State).filter(State.name.like('[a]%')).fetchall()
+    query = session.query(State)
+    results = query.fetchall()
     for key, value in query:
-        print("{}: {}".format(key, value))
+        if 'a' in value:
+            print("{}: {}".format(key, value))
