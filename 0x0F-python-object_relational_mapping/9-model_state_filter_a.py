@@ -21,7 +21,7 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
     query = session.query(State)
-    results = query.fetchall()
-    for key, value in query:
+    results = session.execute(query).fetchall()
+    for key, value in results:
         if 'a' in value:
             print("{}: {}".format(key, value))
