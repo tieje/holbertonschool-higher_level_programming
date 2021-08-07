@@ -20,7 +20,7 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Session = sessionmaker(engine)
     session = Session()
-    query = session.query(City)
-    results = session.execute(query).fetchall()
-    for key, value in results:
-        print("{}: {}".format(key, value))
+    query = session.query(State, City).filter(State.id == City.state_id).all()
+    for res in ResultSet:
+        print("{}: ({}) {}".format(res.State.name, res.City.id, res.city.name))
+    session.close()
