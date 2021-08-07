@@ -15,7 +15,7 @@ if __name__ == "__main__":
     query = """
             SELECT *
             FROM states
-            WHERE name LIKE "N%"
+            WHERE name LIKE 'N%'
             ORDER BY states.id ASC;
             """
     db.query(query)
@@ -23,4 +23,4 @@ if __name__ == "__main__":
 
     # Print the results
     for row in result.fetch_row(0):
-            print(row)
+        print(row)
