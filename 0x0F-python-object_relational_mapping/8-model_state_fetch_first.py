@@ -21,7 +21,5 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
     query = session.query(State)
-    results = session.execute(query)
-    final = results.fetchone()
-    for key, value in final:
-        print("{}: {}".format(key, value))
+    results = session.(query).first()
+    print("{}: {}".format(results.id, results.name))
