@@ -1,5 +1,30 @@
 Project for learning about sqlalchemy
 
+IF YOU DON'T KNOW THE PASSWORD TO THE ROOT USER FOR YOUR SSH INSTANCE, follow these instructions.
+After sshing into your instance:
+
+service mysql stop
+
+sudo mysqld_safe --skip-grant-tables --skip-syslog --skip-networking
+
+This terminal will lock up so open another terminal and ssh from there.
+
+mysql -u root
+
+UPDATE mysql.user SET authentication_string=PASSWORD('password') WHERE User='root';
+FLUSH PRIVILEGES;
+
+exit
+
+service mysql stop
+
+service mysql start
+
+mysql -u root -p
+
+
+BELOW IS HOW TO BUILD YOUR OWN INSTANCE IN DOCKER ON A LINUX DESKTOP.
+
 docker run --privileged --name=fullmetal holbertonschool/ubuntu-1404-python3:latest
 
 Open a second terminal and run this to get into the container
