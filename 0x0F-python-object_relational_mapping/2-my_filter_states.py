@@ -26,5 +26,5 @@ if __name__ == "__main__":
     result = db.store_result()
 
     # Print the results
-    for row in cursor.fetchall():
+    for row in result.fetch_row(0):
         print(row)
