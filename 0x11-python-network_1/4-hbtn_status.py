@@ -2,6 +2,7 @@
 '''Fetch https://intranet.hbtn.io/status'''
 from requests import get
 
+
 if __name__ == '__main__':
     response = get('https://intranet.hbtn.io/status')
     print("Body response:")
