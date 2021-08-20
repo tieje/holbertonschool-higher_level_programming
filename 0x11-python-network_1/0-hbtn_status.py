@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import urllib.request as ur
 '''Fetch https://intranet.hbtn.io/status'''
+import urllib.request as ur
 
 if __name__ == "__main__":
     with ur.urlopen('https://intranet.hbtn.io/status') as u:
