@@ -12,4 +12,4 @@ if __name__ == "__main__":
     data = upar.urlencode({'email': email_input})
     data = data.encode('utf-8')
     with uresp.urlopen(url_request, data=data) as response:
-        print(response.read())
+        print(response.read().decode('utf-8'))
