@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 '''Check error code'''
-from requests import get
+import requests
 from sys import argv as av
 
 
 if __name__ == "__main__":
-    response = get(av[1])
+    response = requests.get(av[1])
     status = response.status_code
     if status >= 400:
         print("Error code: {}".format(status))
