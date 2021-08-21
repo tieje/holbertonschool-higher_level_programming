@@ -1,8 +1,9 @@
 #!/usr/bin/python3
+'''Post email'''
+
 from requests import post
 from sys import argv as av
-import seleneium
-
 if __name__ == "__main__":
+    print(av)
     data = {"email": av[2]}
-    print(post(argv[1], data=data).text)
+    print(post(av[1], data=data).text)
