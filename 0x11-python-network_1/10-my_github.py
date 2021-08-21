@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 '''Print github userid from github api'''
-from requests import get
+import requests
 from requests.auth import HTTPBasicAuth
-from sys import av
+from sys import argv
+
+
 if __name__ == "__main__":
-    response = get('https://api.github.com/user', auth=HTTPBasicAuth(av[1], av[2]))
-    try:
-        json_body = response.json()
-        print(json_body['id'])
-    except:
-        print('None')
+    username = argv[1]
+    password = argv[2]
+    url = 'https://api.github.com/user'
+    response = requests.get(url, auth=HTTPBasicAuth(username, password))
+    info = response.json()
+    print(info.get('id'))
