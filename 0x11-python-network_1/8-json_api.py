@@ -1,17 +1,22 @@
 #!/usr/bin/python3
 '''Send POST with letter'''
-from requests import post
-from sys import av as av
+import requests
+import sys
+
 if __name__ == '__main__':
-    val = ''
-    if len(av) > 1 and av[1] is not None:
-        val = av[1]
-    data = {'q': val}
-    response = post('http://0.0.0.0:5000/search_user', data=data)
     try:
-        json_body = response.json()
-        if json_body:
-            print("[{}] {}".format(json_body["id"], json_body["name"]))
+        letter = sys.argv[1]
+    except IndexError:
+        letter = ""
+
+    url = "http://0.0.0.0:5000/search_user"
+    post_data = {"q": letter}
+    response = requests.post(url, post_data)
+
+    try:
+        decoded = response.json()
+        if decoded:
+            print("[{}] {}".format(decoded.get("id"), decoded.get("name")))
         else:
             print("No result")
     except ValueError:
