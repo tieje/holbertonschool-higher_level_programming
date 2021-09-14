@@ -1,5 +1,5 @@
-#!/usr/bin/node
-// #!/usr/local/bin/node
+#!/usr/local/bin/node
+// #!/usr/bin/node
 // Reads and prints the content of the file
 
 const fs = require('fs');
