@@ -1,1 +1,1 @@
-#!/usr/bin/node
+document.querySelector('header').setAttribute('style', 'color: #FF0000;');
